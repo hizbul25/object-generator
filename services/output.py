@@ -16,3 +16,13 @@ def dump_report(result: str):
         report_file.close()
     except IOError as e:
         print("{}".format(e))
+        
+def get_report():
+    try:
+        report_file = open(os.getcwd() + '/data/report.json', 'r')
+        data = json.loads(report_file.read())
+        report_file.close()
+        
+        return data
+    except IOError as e:
+        print("{}".format(e))
