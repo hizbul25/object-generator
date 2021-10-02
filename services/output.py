@@ -20,6 +20,8 @@ def dump_report(result: str):
 def get_report():
     try:
         report_file = open(os.getcwd() + '/data/report.json', 'r')
+        if not report_file.read(1):
+            raise Exception("File is empty")
         data = json.loads(report_file.read())
         report_file.close()
         

@@ -8,7 +8,7 @@ def test_generator_running(app, client):
     
 def test_object_generation(app, client):
     res = client.post("/api/v1/generate-object")
-    expected = {"msg": "Object generated successfully"}
+    expected = {"msg": "Object creation is running in background!!"}
     assert expected == json.loads(res.get_data(as_text=True))
     assert res.status_code == 200
     
